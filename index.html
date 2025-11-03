@@ -3,70 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boda Daniela & Óscar</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Boda Daniela & Óscar 💍</title>
+
+  <!-- Fuente elegante: Playfair Display + Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: url('images/portada.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    header h1, header h2, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Contador */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 3rem auto;
+      flex-wrap: wrap;
+    }
+
+    .countdown div {
+      background-color: #b09a74;
+      color: white;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .countdown span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    /* Secciones */
+    section {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #4b3f2f;
+    }
+
+    /* Galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Mapa */
+    iframe {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 12px;
+      border: none;
+    }
+
+    /* Botón */
+    .btn {
+      background-color: #b09a74;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #8f7a56;
+    }
+
+    footer {
+      background-color: #4b3f2f;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>Daniela Sandoval & Óscar Gaytán</h1>
-    <h2>26 de diciembre de 2025 · 5:00 PM</h2>
+    <h1>DANIELA SANDOVAL Y ÓSCAR GAYTÁN</h1>
+    <p>26 de diciembre de 2025</p>
+    <p>05:00 pm</p>
   </header>
 
-  <section class="section">
-    <h2>Nos complace invitarte a nuestra boda</h2>
-    <p>
-      Será un día muy especial que queremos compartir contigo.<br /><br />
-      <strong>Agradecemos tu presencia sin niños.</strong>
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Galería de Fotos</h2>
-    <div class="gallery">
-      <img src="https://drive.google.com/uc?id=1pdjkomF7NPWKqDF4AsDz-qLtkvhDPNAZ" alt="Foto 1">
-      <img src="https://drive.google.com/uc?id=17gvOJddc23EexhBDp5syh-1I2pL5e7QS" alt="Foto 2">
-      <img src="https://drive.google.com/uc?id=189ElPIdbyvCqMlVe6ZnmW50wLz-bkkDr" alt="Foto 3">
-      <img src="https://drive.google.com/uc?id=1tcvBR1qz31XNQej3dQarFrzteEsC3E8H" alt="Foto 4">
-      <img src="https://drive.google.com/uc?id=1wo6SmkRMYTpODPmt4qlM7VxmjpWlrPZz" alt="Foto 5">
-      <img src="https://drive.google.com/uc?id=1CutSppCf29kZeMnIkdaXlShd099fVFzK" alt="Foto 6">
-      <img src="https://drive.google.com/uc?id=1dAnRv7y2CS7w03KeE9MZBVHzp_InCPRH" alt="Foto 7">
-      <img src="https://drive.google.com/uc?id=1KF6GLET88el4SUUuGt1ye9On38zPrtzN" alt="Foto 8">
-      <img src="https://drive.google.com/uc?id=1USlbD8_AK9mo3af7zmdhfHzm29nKjuOn" alt="Foto 9">
-      <img src="https://drive.google.com/uc?id=1dxqVLpevcpJho7a_4-eUo4N8ldDEE8KV" alt="Foto 10">
+  <section id="contador">
+    <h2>Cuenta regresiva</h2>
+    <div class="countdown" id="countdown">
+      <div><span id="days">0</span>Días</div>
+      <div><span id="hours">0</span>Horas</div>
+      <div><span id="minutes">0</span>Minutos</div>
+      <div><span id="seconds">0</span>Segundos</div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Ubicación</h2>
-    <p>
-      Ejido La Libertad, Torreón, Coahuila, México<br />
-      Atrás del Col. Americ La Libertad, CP 27403
-    </p>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!4v1730667136813!6m8!1m7!1sCAoSLEFGMVFpcE1PNjQ5aExmSVdVZ2pCUjFXSWVqMVpBaERyR0J1TkNQRGVQRTVZ!2m2!1d25.594083!2d-103.386166!3f0!4f0!5f0.7820865974627469"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
-
-    <br />
-    <a href="https://www.google.com/maps/place/25%C2%B035'38.7%22N+103%C2%B023'10.2%22W" target="_blank">
-      <button>Abrir en Google Maps</button>
-    </a>
+  <section id="galeria">
+    <h2>Nuestros momentos</h2>
+    <div class="gallery">
+      <img src="images/foto1.jpg" alt="Foto 1">
+      <img src="images/foto2.jpg" alt="Foto 2">
+      <img src="images/foto3.jpg" alt="Foto 3">
+      <img src="images/foto4.jpg" alt="Foto 4">
+      <img src="images/foto5.jpg" alt="Foto 5">
+      <img src="images/foto6.jpg" alt="Foto 6">
+      <img src="images/foto7.jpg" alt="Foto 7">
+      <img src="images/foto8.jpg" alt="Foto 8">
+      <img src="images/foto9.jpg" alt="Foto 9">
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Guardar la fecha</h2>
-    <p>Agrega este evento a tu calendario para no olvidarlo.</p>
-    <a
-      href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Daniela+y+Oscar&dates=20251226T170000/20251226T220000&details=Ejido+La+Libertad,+Torreón,+Coahuila,+México&location=25.594083,-103.386166"
-      target="_blank">
-      <button>Agregar al calendario</button>
-    </a>
+  <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <p>Ejido La Libertad, Torreón, Coahuila, México</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14393.274572815559!2d-103.39010945!3d25.5943259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fd915b26d2ac9%3A0x535e1531cd2c974a!2sEjido%20la%20Libertad%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses!2smx!4v1762206739831!5m2!1ses!2smx" allowfullscreen loading="lazy"></iframe>
+    <br><br>
+    <a class="btn" href="https://maps.google.com/?q=Ejido+La+Libertad,+Torreón,+Coahuila" target="_blank">Abrir en Google Maps</a>
   </section>
 
   <footer>
-    <p>Con cariño, Daniela & Óscar 💕</p>
+    <p>Agradecemos tu presencia sin niños 💕</p>
   </footer>
+
+  <script>
+    // Contador regresivo
+    const eventDate = new Date("December 26, 2025 17:00:00").getTime();
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+  </script>
 </body>
 </html>
