@@ -3,28 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Daniela & Oscar 💍 Nuestra Boda">
-  <meta property="og:description" content="Acompáñanos en el día más especial de nuestras vidas.">
-  <meta property="og:image" content="https://tusitio.github.io/invitacion-boda/img/fotoportada.jpg">
+  <title>Boda Daniela & Óscar 💍</title>
+  <meta property="og:title" content="Daniela & Óscar 💍 Nuestra Boda">
+  <meta property="og:description" content="Acompáñanos a celebrar el día más importante de nuestras vidas.">
+  <meta property="og:image" content="img/fotoportada.png">
   <meta property="og:type" content="website">
-  <title>Daniela & Oscar 💍</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/535/535183.png">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      color: #5B4B47;
+      background-color: #FFF9F6;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .countdown div {
+      background-color: #E8C4B8;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 70px;
+    }
+  </style>
 </head>
-
-<body class="bg-[#FFF9F6] text-[#5B4B47]">
+<body>
 
   <!-- Portada -->
-  <section class="relative h-screen flex flex-col justify-center items-center text-center text-white" 
+  <section class="relative h-screen flex flex-col justify-center items-center text-center text-white"
     style="background-image: url('img/fotoportada.jpg'); background-size: cover; background-position: center;">
-    <!-- 👆 Aquí cambias la imagen de portada -->
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     <div class="relative z-10">
-      <h1 class="text-5xl md:text-6xl font-semibold mb-4">Daniela & Oscar</h1>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Daniela & Óscar</h1>
       <p class="text-xl mb-6">26 de diciembre de 2025 • 5:00 PM</p>
       <a href="#detalles" class="bg-white text-[#5B4B47] px-6 py-3 rounded-full font-semibold hover:bg-[#f5e6e0] transition">Ver detalles</a>
     </div>
   </section>
+
+  <!-- Contador regresivo -->
+  <section id="contador" class="py-12 text-center">
+    <h2 class="text-3xl font-semibold mb-6 text-[#7A5C58]">Faltan...</h2>
+    <div id="timer" class="countdown text-[#5B4B47]"></div>
+  </section>
+
+  <script>
+    const eventDate = new Date("December 26, 2025 17:00:00").getTime();
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timer.innerHTML = `
+        <div>${days}<br><span class='text-sm'>Días</span></div>
+        <div>${hours}<br><span class='text-sm'>Horas</span></div>
+        <div>${minutes}<br><span class='text-sm'>Minutos</span></div>
+        <div>${seconds}<br><span class='text-sm'>Segundos</span></div>
+      `;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        timer.innerHTML = "¡Hoy es el gran día! 💍";
+      }
+    }, 1000);
+  </script>
 
   <!-- Detalles -->
   <section id="detalles" class="py-16 px-6 text-center">
@@ -44,21 +95,20 @@
       ⏰ 5:00 PM
     </p>
 
+    <!-- Mapa -->
+    <div class="flex justify-center mb-8">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14393.274572815559!2d-103.39010945!3d25.5943259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fd915b26d2ac9%3A0x535e1531cd2c974a!2sEjido%20la%20Libertad%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses!2smx!4v1762206739831!5m2!1ses!2smx"
+      width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
     <!-- Botones -->
     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-      <a href="https://www.google.com/maps?q=25.5930,-103.3861" target="_blank"
-         class="bg-[#7A5C58] text-white px-6 py-3 rounded-full hover:bg-[#5B4B47] transition">
-        Cómo llegar
-      </a>
-
-      <!-- Google Calendar -->
       <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Daniela+y+Oscar&dates=20251226T230000Z/20251227T050000Z&details=Nos+casamos+%F0%9F%92%8D+en+Ejido+La+Libertad%2C+Torre%C3%B3n.&location=Ejido+La+Libertad%2C+Torre%C3%B3n%2C+Coahuila"
          target="_blank"
          class="bg-[#E8C4B8] text-[#5B4B47] px-6 py-3 rounded-full hover:bg-[#d9b2a3] transition">
         Agregar a Google Calendar
       </a>
 
-      <!-- Apple Calendar -->
       <a href="calendar/boda-daniela-oscar.ics" download
          class="bg-[#E8C4B8] text-[#5B4B47] px-6 py-3 rounded-full hover:bg-[#d9b2a3] transition">
         Agregar a Apple Calendar
@@ -70,7 +120,6 @@
   <section id="momentos" class="py-16 bg-[#FFF9F6]">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-semibold mb-10 text-[#7A5C58]">Nuestros Momentos</h2>
-
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <img src="img/foto1.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
         <img src="img/foto2.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
@@ -87,8 +136,9 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#7A5C58] text-white py-8 text-center">
-    <p>Con amor, Daniela & Oscar 💍</p>
+  <footer class="bg-[#7A5C58] text-white py-10 text-center text-lg">
+    <p>Con amor, Daniela & Óscar 💍</p>
   </footer>
+
 </body>
 </html>
