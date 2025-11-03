@@ -1,195 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boda Daniela & Óscar 💍</title>
-
-  <!-- Fuente elegante: Playfair Display + Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: #333;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background: url('images/portada.jpg') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.45);
-    }
-
-    header h1, header h2, header p {
-      position: relative;
-      z-index: 2;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-    }
-
-    /* Contador */
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 3rem auto;
-      flex-wrap: wrap;
-    }
-
-    .countdown div {
-      background-color: #b09a74;
-      color: white;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      text-align: center;
-      min-width: 80px;
-    }
-
-    .countdown span {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    /* Secciones */
-    section {
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #4b3f2f;
-    }
-
-    /* Galería */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 10px;
-      padding: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
-    /* Mapa */
-    iframe {
-      width: 90%;
-      max-width: 600px;
-      border-radius: 12px;
-      border: none;
-    }
-
-    /* Botón */
-    .btn {
-      background-color: #b09a74;
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #8f7a56;
-    }
-
-    footer {
-      background-color: #4b3f2f;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Daniela & Oscar 💍 Nuestra Boda">
+  <meta property="og:description" content="Acompáñanos en el día más especial de nuestras vidas.">
+  <meta property="og:image" content="https://tusitio.github.io/invitacion-boda/img/fotoportada.jpg">
+  <meta property="og:type" content="website">
+  <title>Daniela & Oscar 💍</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/535/535183.png">
 </head>
-<body>
 
-  <header>
-    <h1>DANIELA SANDOVAL Y ÓSCAR GAYTÁN</h1>
-    <p>26 de diciembre de 2025</p>
-    <p>05:00 pm</p>
-  </header>
+<body class="bg-[#FFF9F6] text-[#5B4B47]">
 
-  <section id="contador">
-    <h2>Cuenta regresiva</h2>
-    <div class="countdown" id="countdown">
-      <div><span id="days">0</span>Días</div>
-      <div><span id="hours">0</span>Horas</div>
-      <div><span id="minutes">0</span>Minutos</div>
-      <div><span id="seconds">0</span>Segundos</div>
+  <!-- Portada -->
+  <section class="relative h-screen flex flex-col justify-center items-center text-center text-white" 
+    style="background-image: url('img/fotoportada.jpg'); background-size: cover; background-position: center;">
+    <!-- 👆 Aquí cambias la imagen de portada -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl md:text-6xl font-semibold mb-4">Daniela & Oscar</h1>
+      <p class="text-xl mb-6">26 de diciembre de 2025 • 5:00 PM</p>
+      <a href="#detalles" class="bg-white text-[#5B4B47] px-6 py-3 rounded-full font-semibold hover:bg-[#f5e6e0] transition">Ver detalles</a>
     </div>
   </section>
 
-  <section id="galeria">
-    <h2>Nuestros momentos</h2>
-    <div class="gallery">
-      <img src="images/foto1.jpg" alt="Foto 1">
-      <img src="images/foto2.jpg" alt="Foto 2">
-      <img src="images/foto3.jpg" alt="Foto 3">
-      <img src="images/foto4.jpg" alt="Foto 4">
-      <img src="images/foto5.jpg" alt="Foto 5">
-      <img src="images/foto6.jpg" alt="Foto 6">
+  <!-- Detalles -->
+  <section id="detalles" class="py-16 px-6 text-center">
+    <h2 class="text-4xl font-semibold mb-8 text-[#7A5C58]">Detalles del Evento</h2>
+    <p class="max-w-2xl mx-auto mb-4">
+      Será una ceremonia íntima donde celebraremos nuestro amor rodeados de nuestros seres queridos.
+    </p>
+    <p class="text-[#7A5C58] font-semibold">💐 Agradecemos tu presencia sin niños 💐</p>
+  </section>
+
+  <!-- Ceremonia -->
+  <section id="ceremonia" class="bg-[#FDF4F1] py-16 text-center px-6">
+    <h2 class="text-4xl font-semibold mb-6 text-[#7A5C58]">Ceremonia y Recepción</h2>
+    <p class="max-w-xl mx-auto mb-8">
+      📍 <strong>Ejido La Libertad</strong><br>
+      Torreón, Coahuila, México<br>
+      ⏰ 5:00 PM
+    </p>
+
+    <!-- Botones -->
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+      <a href="https://www.google.com/maps?q=25.5930,-103.3861" target="_blank"
+         class="bg-[#7A5C58] text-white px-6 py-3 rounded-full hover:bg-[#5B4B47] transition">
+        Cómo llegar
+      </a>
+
+      <!-- Google Calendar -->
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Daniela+y+Oscar&dates=20251226T230000Z/20251227T050000Z&details=Nos+casamos+%F0%9F%92%8D+en+Ejido+La+Libertad%2C+Torre%C3%B3n.&location=Ejido+La+Libertad%2C+Torre%C3%B3n%2C+Coahuila"
+         target="_blank"
+         class="bg-[#E8C4B8] text-[#5B4B47] px-6 py-3 rounded-full hover:bg-[#d9b2a3] transition">
+        Agregar a Google Calendar
+      </a>
+
+      <!-- Apple Calendar -->
+      <a href="calendar/boda-daniela-oscar.ics" download
+         class="bg-[#E8C4B8] text-[#5B4B47] px-6 py-3 rounded-full hover:bg-[#d9b2a3] transition">
+        Agregar a Apple Calendar
+      </a>
     </div>
   </section>
 
-  <section id="ubicacion">
-    <h2>Ubicación</h2>
-    <p>Ejido La Libertad, Torreón, Coahuila, México</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14393.274572815559!2d-103.39010945!3d25.5943259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fd915b26d2ac9%3A0x535e1531cd2c974a!2sEjido%20la%20Libertad%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses!2smx!4v1762206739831!5m2!1ses!2smx" allowfullscreen loading="lazy"></iframe>
-    <br><br>
-    <a class="btn" href="https://maps.google.com/?q=Ejido+La+Libertad,+Torreón,+Coahuila" target="_blank">Abrir en Google Maps</a>
+  <!-- Nuestros Momentos -->
+  <section id="momentos" class="py-16 bg-[#FFF9F6]">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-10 text-[#7A5C58]">Nuestros Momentos</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="img/foto1.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto2.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto3.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto4.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto5.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto6.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto7.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto8.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/foto9.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="img/fotoportada.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>Agradecemos tu presencia sin niños 💕</p>
+  <!-- Footer -->
+  <footer class="bg-[#7A5C58] text-white py-8 text-center">
+    <p>Con amor, Daniela & Oscar 💍</p>
   </footer>
-
-  <script>
-    // Contador regresivo
-    const eventDate = new Date("December 26, 2025 17:00:00").getTime();
-    const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-    }, 1000);
-  </script>
 </body>
 </html>
