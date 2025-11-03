@@ -44,38 +44,94 @@
     </div>
   </section>
 
-  <!-- Contador regresivo -->
-  <section id="contador" class="py-12 text-center">
-    <h2 class="text-3xl font-semibold mb-6 text-[#7A5C58]">Faltan...</h2>
-    <div id="timer" class="countdown text-[#5B4B47]"></div>
-  </section>
+ <!-- CONTADOR -->
+<section id="contador">
+  <h2>Faltan...</h2>
+  <div class="countdown">
+    <div class="time-box">
+      <span id="days">00</span>
+      <p>Días</p>
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <p>Horas</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <p>Minutos</p>
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <p>Segundos</p>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const eventDate = new Date("December 26, 2025 17:00:00").getTime();
-    const timer = document.getElementById("timer");
+<style>
+#contador {
+  background-color: #fdf8f6;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'Playfair Display', serif;
+}
 
-    const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+#contador h2 {
+  font-size: 2rem;
+  color: #4b3a36;
+  margin-bottom: 30px;
+}
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-      timer.innerHTML = `
-        <div>${days}<br><span class='text-sm'>Días</span></div>
-        <div>${hours}<br><span class='text-sm'>Horas</span></div>
-        <div>${minutes}<br><span class='text-sm'>Minutos</span></div>
-        <div>${seconds}<br><span class='text-sm'>Segundos</span></div>
-      `;
+.time-box {
+  background-color: #d9a89c;
+  color: #4b3a36;
+  border-radius: 15px;
+  padding: 20px 25px;
+  min-width: 90px;
+}
 
-      if (distance < 0) {
-        clearInterval(countdown);
-        timer.innerHTML = "¡Hoy es el gran día! 💍";
-      }
-    }, 1000);
-  </script>
+.time-box span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.time-box p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+</style>
+
+<script>
+// CONFIGURAR FECHA DE LA BODA
+const bodaFecha = new Date("Dec 26, 2025 17:00:00").getTime();
+
+const x = setInterval(function() {
+  const ahora = new Date().getTime();
+  const distancia = bodaFecha - ahora;
+
+  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerText = dias;
+  document.getElementById("hours").innerText = horas;
+  document.getElementById("minutes").innerText = minutos;
+  document.getElementById("seconds").innerText = segundos;
+
+  if (distancia < 0) {
+    clearInterval(x);
+    document.getElementById("contador").innerHTML = "<h2>¡El gran día ha llegado!</h2>";
+  }
+}, 1000);
+</script>
 
   <!-- Detalles -->
   <section id="detalles" class="py-16 px-6 text-center">
