@@ -3,135 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boda Daniela & Óscar 💍</title>
-  <meta property="og:title" content="Daniela & Óscar 💍 Nuestra Boda">
-  <meta property="og:description" content="Acompáñanos a celebrar el día más importante de nuestras vidas.">
-  <meta property="og:image" content="img/fotoportada.png">
+  <meta property="og:title" content="Daniela & Oscar 💍 Nuestra Boda">
+  <meta property="og:description" content="Acompáñanos en el día más especial de nuestras vidas.">
+  <meta property="og:image" content="https://tusitio.github.io/invitacion/foto-portada.jpg">
   <meta property="og:type" content="website">
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <title>Daniela & Oscar 💍</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      color: #5B4B47;
-      background-color: #FFF9F6;
-    }
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
-    .countdown div {
-      background-color: #E8C4B8;
-      padding: 1rem;
-      border-radius: 10px;
-      width: 70px;
-    }
-  </style>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/535/535183.png">
 </head>
-<body>
+
+<body class="bg-[#FFF9F6] text-[#5B4B47]">
 
   <!-- Portada -->
-  <section class="relative h-screen flex flex-col justify-center items-center text-center text-white"
-    style="background-image: url('img/fotoportada.jpg'); background-size: cover; background-position: center;">
+  <section class="relative h-screen flex flex-col justify-center items-center text-center text-white" 
+    style="background-image: url('https://drive.google.com/uc?export=view&id=1pdjkomF7NPWKqDF4AsDz-qLtkvhDPNAZ'); background-size: cover; background-position: center;">
+    <!-- 👆 Cambia esta URL para usar otra imagen de portada -->
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     <div class="relative z-10">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4">Daniela & Óscar</h1>
-      <p class="text-xl mb-6">26 de diciembre de 2025 • 5:00 PM</p>
+      <h1 class="text-5xl md:text-6xl font-semibold mb-4">Daniela & Oscar</h1>
+      <p class="text-xl mb-6">Nos casamos 💍 12 de diciembre de 2025</p>
       <a href="#detalles" class="bg-white text-[#5B4B47] px-6 py-3 rounded-full font-semibold hover:bg-[#f5e6e0] transition">Ver detalles</a>
     </div>
   </section>
-
- <!-- CONTADOR -->
-<section id="contador">
-  <h2>Faltan...</h2>
-  <div class="countdown">
-    <div class="time-box">
-      <span id="days">00</span>
-      <p>Días</p>
-    </div>
-    <div class="time-box">
-      <span id="hours">00</span>
-      <p>Horas</p>
-    </div>
-    <div class="time-box">
-      <span id="minutes">00</span>
-      <p>Minutos</p>
-    </div>
-    <div class="time-box">
-      <span id="seconds">00</span>
-      <p>Segundos</p>
-    </div>
-  </div>
-</section>
-
-<style>
-#contador {
-  background-color: #fdf8f6;
-  text-align: center;
-  padding: 50px 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-#contador h2 {
-  font-size: 2rem;
-  color: #4b3a36;
-  margin-bottom: 30px;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.time-box {
-  background-color: #d9a89c;
-  color: #4b3a36;
-  border-radius: 15px;
-  padding: 20px 25px;
-  min-width: 90px;
-}
-
-.time-box span {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.time-box p {
-  margin-top: 5px;
-  font-size: 1rem;
-}
-</style>
-
-<script>
-// CONFIGURAR FECHA DE LA BODA
-const bodaFecha = new Date("Dec 26, 2025 17:00:00").getTime();
-
-const x = setInterval(function() {
-  const ahora = new Date().getTime();
-  const distancia = bodaFecha - ahora;
-
-  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-  document.getElementById("days").innerText = dias;
-  document.getElementById("hours").innerText = horas;
-  document.getElementById("minutes").innerText = minutos;
-  document.getElementById("seconds").innerText = segundos;
-
-  if (distancia < 0) {
-    clearInterval(x);
-    document.getElementById("contador").innerHTML = "<h2>¡El gran día ha llegado!</h2>";
-  }
-}, 1000);
-</script>
 
   <!-- Detalles -->
   <section id="detalles" class="py-16 px-6 text-center">
@@ -146,28 +39,23 @@ const x = setInterval(function() {
   <section id="ceremonia" class="bg-[#FDF4F1] py-16 text-center px-6">
     <h2 class="text-4xl font-semibold mb-6 text-[#7A5C58]">Ceremonia y Recepción</h2>
     <p class="max-w-xl mx-auto mb-8">
-      📍 <strong>Ejido La Libertad</strong><br>
-      Torreón, Coahuila, México<br>
-      ⏰ 5:00 PM
+      📍 <strong>Hacienda Los Ángeles</strong><br>
+      Gómez Palacio, Durango<br>
+      ⏰ 6:00 PM
     </p>
-
-    <!-- Mapa -->
-    <div class="flex justify-center mb-8">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14393.274572815559!2d-103.39010945!3d25.5943259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fd915b26d2ac9%3A0x535e1531cd2c974a!2sEjido%20la%20Libertad%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses!2smx!4v1762206739831!5m2!1ses!2smx"
-      width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
 
     <!-- Botones -->
     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Daniela+y+Oscar&dates=20251226T230000Z/20251227T050000Z&details=Nos+casamos+%F0%9F%92%8D+en+Ejido+La+Libertad%2C+Torre%C3%B3n.&location=Ejido+La+Libertad%2C+Torre%C3%B3n%2C+Coahuila"
-         target="_blank"
-         class="bg-[#E8C4B8] text-[#5B4B47] px-6 py-3 rounded-full hover:bg-[#d9b2a3] transition">
-        Agregar a Google Calendar
+      <a href="https://www.google.com/maps?q=25.574936,-103.498051" target="_blank"
+         class="bg-[#7A5C58] text-white px-6 py-3 rounded-full hover:bg-[#5B4B47] transition">
+        Cómo llegar
       </a>
 
-      <a href="calendar/boda-daniela-oscar.ics" download
+      <!-- Agregar al calendario -->
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Daniela+y+Oscar&dates=20251212T180000/20251213T020000&details=Nos+casamos+%F0%9F%92%8D+en+Hacienda+Los+%C3%81ngeles%2C+G%C3%B3mez+Palacio.&location=Hacienda+Los+%C3%81ngeles%2C+G%C3%B3mez+Palacio%2C+Durango"
+         target="_blank"
          class="bg-[#E8C4B8] text-[#5B4B47] px-6 py-3 rounded-full hover:bg-[#d9b2a3] transition">
-        Agregar a Apple Calendar
+        Agregar al calendario
       </a>
     </div>
   </section>
@@ -176,25 +64,25 @@ const x = setInterval(function() {
   <section id="momentos" class="py-16 bg-[#FFF9F6]">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-semibold mb-10 text-[#7A5C58]">Nuestros Momentos</h2>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="img/foto1.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto2.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto3.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto4.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto5.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto6.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto7.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto8.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/foto9.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
-        <img src="img/fotoportada.jpg" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1pdjkomF7NPWKqDF4AsDz-qLtkvhDPNAZ" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=17gvOJddc23EexhBDp5syh-1I2pL5e7QS" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=189ElPIdbyvCqMlVe6ZnmW50wLz-bkkDr" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1tcvBR1qz31XNQej3dQarFrzteEsC3E8H" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1wo6SmkRMYTpODPmt4qlM7VxmjpWlrPZz" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1CutSppCf29kZeMnIkdaXlShd099fVFzK" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1dAnRv7y2CS7w03KeE9MZBVHzp_InCPRH" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1KF6GLET88el4SUUuGt1ye9On38zPrtzN" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1USlbD8_AK9mo3af7zmdhfHzm29nKjuOn" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+        <img src="https://drive.google.com/uc?export=view&id=1dxqVLpevcpJho7a_4-eUo4N8ldDEE8KV" alt="Momentos" class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#7A5C58] text-white py-10 text-center text-lg">
-    <p>Con amor, Daniela & Óscar 💍</p>
+  <footer class="bg-[#7A5C58] text-white py-8 text-center">
+    <p>Con amor, Daniela & Oscar 💍</p>
   </footer>
-
 </body>
 </html>
